@@ -4,6 +4,7 @@ import {
   AfterViewChecked,
   AfterViewInit,
   Component,
+  ContentChild,
   DoCheck,
   ElementRef,
   Input,
@@ -33,6 +34,7 @@ export class ServerElementComponent implements OnInit,
   @Input('srvElement') element: { type: string; name: string; content: string };
   // Without { static: true } it will throw an error OnInit method.
   @ViewChild('heading', { static: true }) header: ElementRef;
+  @ContentChild('contentParagraph', { static: true}) paragraph: ElementRef;
 
   constructor() {
     this.log('Constructor');
@@ -40,20 +42,20 @@ export class ServerElementComponent implements OnInit,
 
   ngOnChanges(changes: SimpleChanges): void {
     this.log('ngOnChanges');
-    console.log(changes);
-    
+    console.log(changes);    
   }
   ngDoCheck(): void {
     this.log('ngDoCheck');
   }
   ngAfterContentInit(): void {
     this.log('ngAfterContentInit');
+    console.log('** Paragraph: ' + this.paragraph.nativeElement.textContent);
   }
   ngAfterContentChecked(): void {
     this.log('ngAfterContentChecked');
   }
   ngAfterViewInit(): void {
-    console.log('Tex Content: ' + this.header.nativeElement.textContent);
+    console.log('** Text Content: ' + this.header.nativeElement.textContent);
     this.log('ngAfterViewInit');
   }
   ngAfterViewChecked(): void {
@@ -63,8 +65,9 @@ export class ServerElementComponent implements OnInit,
     this.log('ngOnDestroy');
   }
   ngOnInit(): void {
-    console.log('Text Content: ' + this.header.nativeElement.textContent);
     this.log('ngOnInit');
+    console.log('** Text Content: ' + this.header.nativeElement.textContent);
+    console.log('** Paragraph: ' + this.paragraph.nativeElement.textContent);
   }
   log(methodName): void {
     console.log(`${methodName} Init!`);
