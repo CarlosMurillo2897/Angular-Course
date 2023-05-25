@@ -53,6 +53,14 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "tests": {
+              "fileReplacements": [
+                {
+                  "replace": "src/app/app.module.ts",
+                  "with": "src/app/tests/app/app.module.test.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -62,6 +70,9 @@
           "configurations": {
             "production": {
               "browserTarget": "TheBasics:build:production"
+            },
+            "tests": {
+              "browserTarget": "TheBasics:build:tests"
             },
             "development": {
               "browserTarget": "TheBasics:build:development"

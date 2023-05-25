@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component.test'
+import { AppComponent } from 'src/app/tests/app/app.component.test'
 import { GameControlComponent } from '../game-control/game-control.component';
 import { OddComponent } from '../odd/odd.component';
 import { EvenComponent } from '../even/even.component';
