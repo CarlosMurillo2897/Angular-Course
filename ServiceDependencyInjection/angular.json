@@ -53,6 +53,14 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "tests": {
+              "fileReplacements": [
+                { 
+                  "replace": "src/app/app.module.ts",
+                  "with": "src/app/tests/app/app.module.test.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -65,6 +73,9 @@
             },
             "development": {
               "browserTarget": "ServiceDependencyInjection:build:development"
+            },
+            "tests": {
+              "browserTarget": "ServiceDependencyInjection:build:tests"
             }
           },
           "defaultConfiguration": "development"
