@@ -10,8 +10,11 @@ export class HomeComponent {
 
   constructor(private router: Router) {}
   
-  onLoadServers() {
+  onLoadServer(id: number) {
     // Complex calculation.
-    this.router.navigate(['/servers']);
+    this.router.navigate(['/servers', id, 'edit'], {
+      queryParams: { allowEdit: '1' },
+      fragment: 'loading'
+    });
   }
 }
