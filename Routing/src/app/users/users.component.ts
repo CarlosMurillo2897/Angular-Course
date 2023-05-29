@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent {
-  users: string[];
+  users = [
+     { name: 'Max' }, 
+     { name: 'Anna' }, 
+     { name: 'Chris' }
+  ];
 }
