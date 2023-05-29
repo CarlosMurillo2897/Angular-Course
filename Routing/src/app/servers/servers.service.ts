@@ -1,8 +1,8 @@
 export class ServersService {
     private servers = [
-        { id: 1, name: 'Productionserver', status: 'Offline' },
-        { id: 2, name: 'Testserver', status: 'Unknown' },
-        { id: 3, name: 'Devserver', status: 'Online' },
+        { id: 1, name: 'Productionserver', status: 'offline' },
+        { id: 2, name: 'Testserver', status: 'online' },
+        { id: 3, name: 'Devserver', status: 'offline' },
     ];
 
     getServers() {
