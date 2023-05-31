@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AuthService } from './auth.service';
 import { ServersService } from './servers/servers.service';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ServersService } from './servers/servers.service';
     UserComponent,
     EditServerComponent,
     ServerComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ErrorPageComponent
   ],
   imports: [
     FormsModule,

@@ -7,9 +7,10 @@ import { UserComponent } from "./users/user/user.component";
 import { ServersComponent } from "./servers/servers.component";
 import { ServerComponent } from "./servers/server/server.component";
 import { EditServerComponent } from "./servers/edit-server/edit-server.component";
-import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+// import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { canActivateChild } from "./auth-guard.service";
 import { CanDeactivateGuard } from "./servers/edit-server/can-deactivate-guard.service";
+import { ErrorPageComponent } from "./error-page/error-page.component";
 
 const appRoutes: Routes = [
   {
@@ -42,9 +43,16 @@ const appRoutes: Routes = [
       }
     ]
   },
+  // {
+  //   path: 'not-found',
+  //   component: PageNotFoundComponent
+  // },
   {
     path: 'not-found',
-    component: PageNotFoundComponent
+    component: ErrorPageComponent,
+    data: {
+      message: 'Page not found!'
+    }
   },
   {
     path: '**',
