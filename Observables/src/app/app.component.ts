@@ -3,7 +3,10 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styles: [`.container {
+      margin-top: 30px;
+    }
+  `]
 })
 export class AppComponent {
   title = 'Observables';
