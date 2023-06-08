@@ -37,11 +37,25 @@
         </div>
         <div class="mb-3">
           <label for="secret" class="form-label">Secret Questions</label>
-          <select name="secret" id="secret" class="form-select" [ngModel]="defaultQuestion">
+          <select
+            name="secret"
+            id="secret"
+            class="form-select"
+            [ngModel]="defaultQuestion"
+          >
             <option value="pet">Your first Pet?</option>
             <option value="teacher">Your first teacher?</option>
           </select>
         </div>
+        <div class="mb-3">
+          <textarea
+            name="questionAnswer"
+            rows="3"
+            [(ngModel)]="answer"
+            class="form-control"
+          ></textarea>
+        </div>
+        <p>Your reply: {{ answer }}</p>
         <button class="btn btn-primary" type="submit" [disabled]="!f.valid">
           Submit
         </button>
