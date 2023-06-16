@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <form [formGroup]="signupForm">
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
         <div class="mb-3">
           <label for="username">Username</label>
           <input
@@ -22,7 +22,11 @@
         </div>
         <div class="radio-group" *ngFor="let gender of genders">
           <label>
-            <input type="radio" formControlName="gender" [value]="gender" />
+            <input
+              type="radio"
+              formControlName="gender"
+              [value]="gender"
+            />
             {{ gender.toUpperCase() }}
           </label>
         </div>
