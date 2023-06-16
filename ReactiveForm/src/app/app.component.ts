@@ -8,6 +8,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
     .container {
       margin-top: 30px;
     }
+    input.ng-invalid.ng-touched {
+      border: 1px solid red;
+    }
   `]
 })
 export class AppComponent implements OnInit {
